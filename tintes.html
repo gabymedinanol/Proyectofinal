@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            
+            body{
+                font-family: Arial;
+                padding: 10px;
+                background: #ffffff;
+            }
+
+            *{
+                box-sizing: border-box;
+            }
+
+
+            ul {
+                list-style-type: none; /* Quita los puntos de las listas */
+                padding: 0;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                background-color: #a9825a; /* Color de fondo */
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 60px;
+                z-index: 1000; /* Asegura que el menú esté encima de otros elementos */
+            }
+
+ul > li {
+    position: relative; /* Necesario para posicionar el submenú */
+    padding: 10px 20px;
+}
+
+ul > li > a {
+    text-decoration: none; /* Sin subrayado */
+    color: #000000; /* Color del texto */
+    font-weight: bold;
+}
+
+ul > li:hover {
+    background-color: #ba8445; /* Cambia el color de fondo al pasar el cursor */
+}
+
+ul > li > ul {
+    display: none; /* Oculta el submenú inicialmente */
+    position: absolute; /* Posiciona el submenú relativo al padre */
+    top: 100%; /* Aparece debajo del elemento padre */
+    left: 0;
+    background-color: #a9825a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 150px; /* Asegura un ancho mínimo */
+    height: 120px;
+}
+
+ul > li:hover > ul {
+    display: block; /* Muestra el submenú al pasar el cursor */
+}
+
+ul > li > ul > li {
+    padding: 10px 20px; /* Añade espacio interno */
+    width: 100%; /* Asegura que cada elemento ocupe todo el ancho */
+    height: auto;
+}
+
+ul > li > ul > li > a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul > li > ul > li:hover {
+    background-color: #ba8445;
+}
+
+            
+                        /* Estilo de la imagen del logo */
+                        .logo img {
+                            width: 50px;
+    height: 50px; /* Ajusta el tamaño de la imagen */
+    margin: 0 10px; /* Espaciado horizontal */
+    padding: 0;
+    transform: translateY(-10%);
+}
+            
+            
+            /* Header/Blog Title*/
+            .header{
+                display: flex;
+                padding: 10px;
+                text-align: center;
+                background: #a9825a;
+                justify-content: center;
+                align-items: center;
+                margin-top: 50px;
+                height: 80px;
+            }
+
+            .header h1{
+                font-size: 50px;
+            }
+
+            
+            .dropdown{
+                position: relative;
+                display: inline-block;
+            }
+
+            .dropdown-content{
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            .dropdown:hover .dropdown-content{
+                display: block;
+            }
+
+            .desc{
+                padding: 15px;
+                text-align: center;
+            }
+
+            /*Footer*/
+            .footer{
+                padding: 20px;
+                text-align: center;
+                background: #a9825a;
+                margin-top: 20px;
+                height: 123px;
+            }
+
+            .footer h4{
+                margin-top: 4px;
+            }
+
+            .redes img{
+                width: 50px;
+                height: 50px;
+            }
+
+            p{
+                text-align: center;
+            }
+
+            @media screen and (max-width: 1024px) {
+                 ul {
+                 flex-direction: column; /* Convierte el menú en vertical */
+                  height: auto;
+                 }
+            }
+
+/* Media Queries para pantallas medianas (tablets) */
+@media screen and (max-width: 1024px) {
+    .header h1 {
+        font-size: 36px; /* Reduce el tamaño del texto */
+    }
+
+    .header {
+        padding: 15px; /* Reduce el relleno del contenedor */
+        margin-top: 250px;
+    }
+}
+
+/* Media Queries para pantallas pequeñas (móviles) */
+@media screen and (max-width: 600px) {
+    .header h1 {
+        font-size: 24px; /* Reduce aún más el tamaño del texto */
+    }
+
+    .header {
+        padding: 10px; /* Espaciado más pequeño */
+        margin-top: 250px;
+    }
+}
+
+
+            @media only screen and (max-width: 700px){
+                .responsive{
+                    width: 49.99999%;
+                    margin: 6px 0;
+                }
+            }
+
+            @media only screen and (max-width: 500px){
+                .responsive{
+                    width: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <ul>
+            <li class="logo"><a href="index.html"><img src="img/logo-removebg-preview.png" alt="Logo"></a></li>
+            <li><a href="cortes.html">Cortes de Cabello</a></li>
+            <li><a href="#">Alisado de Cabello</a></li>
+            <li><a href="tintes.html">Tintes de Cabello</a></li>
+            <li><a href="#">Peinados</a></li>
+            <li>
+                <a href="#">Otros Servicios</a>
+                <ul>
+                    <li><a href="#">Cejas</a></li>
+                    <li><a href="#">Pestañas</a></li>
+                    <li><a href="#">Maquillaje</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+
+        <div class="header">
+           <h1>Tonos para el cabello</h1> 
+        </div>
+        
+        <p>Favor de pasar el cursor sobre las imágenes para descubrir el nombre del tinte</p>
+
+
+        <div class="main">
+        <div class="dropdown">
+            <img src="img/cobrizo.jpg" alt="cobrizo" width="180" height="250">
+            <div class="dropdown-content">
+                <img src="img/cobrizo.jpg" alt="cobrizo" width="400" height="500">
+                <div class="desc">Cobrizo</div>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <img src="img/caoba.jpg" alt="caoba" width="180" height="250">
+            <div class="dropdown-content">
+                <img src="img/caoba.jpg" alt="caoba" width="400" height="500">
+                <div class="desc">Rojo Caoba</div>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <img src="img/rojo.jpg" alt="fuego" width="180" height="250">
+            <div class="dropdown-content">
+                <img src="img/rojo.jpg" alt="fuego" width="400" height="500">
+                <div class="desc">Rojo fuego</div>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <img src="img/rosa.jpg" alt="rosa" width="180" height="250">
+            <div class="dropdown-content">
+                <img src="img/rosa.jpg" alt="rosa" width="400" height="500">
+                <div class="desc">Rosa pastel</div>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <img src="img/cenizo.jpg" alt="cenizo" width="180" height="250">
+            <div class="dropdown-content">
+                <img src="img/cenizo.jpg" alt="cenizo" width="400" height="500">
+                <div class="desc">Rubio cenizo</div>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <img src="img/Balayage.webp" alt="Balayage" width="180" height="250">
+            <div class="dropdown-content">
+                <img src="img/Balayage.webp" alt="Balayage" width="400" height="500">
+                <div class="desc">Balayage</div>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <img src="img/bronde.jpeg" alt="bronde" width="180" height="250">
+            <div class="dropdown-content">
+                <img src="img/bronde.jpeg" alt="bronde" width="400" height="500">
+                <div class="desc">Castaño bronde</div>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <img src="img/negro.jpg" alt="negro" width="180" height="250">
+            <div class="dropdown-content">
+                <img src="img/negro.jpg" alt="negro" width="400" height="500">
+                <div class="desc">Cabello negro  intenso</div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+</div>
+
+<div class="footer">
+    <div class="redes">
+        <a href="https://www.facebook.com/"><img src="img/fb.webp"></a>
+        <a href="https://www.instagram.com"><img src="img/logoig-removebg-preview.png"></a>
+        <a href="https://www.x.com"><img src="img/twitter_x_new_logo_x_rounded_icon_256078-removebg-preview.png"></a>
+        <a href="https://www.tiktok.com"><img src="img/tiktok-removebg-preview.png"></a>
+    </div>
+    <h4>© zS21009934 2024</h4>
+</div>
+
+
+    </body>
+</html>
