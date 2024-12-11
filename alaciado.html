@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            
+            ul {
+                list-style-type: none; /* Quita los puntos de las listas */
+                padding: 0;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                background-color: #a9825a; /* Color de fondo */
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 60px;
+                z-index: 1000; /* Asegura que el menú esté encima de otros elementos */
+            }
+
+ul > li {
+    position: relative; /* Necesario para posicionar el submenú */
+    padding: 10px 20px;
+}
+
+ul > li > a {
+    text-decoration: none; /* Sin subrayado */
+    color: #000000; /* Color del texto */
+    font-weight: bold;
+}
+
+ul > li:hover {
+    background-color: #ba8445; /* Cambia el color de fondo al pasar el cursor */
+}
+
+ul > li > ul {
+    display: none; /* Oculta el submenú inicialmente */
+    position: absolute; /* Posiciona el submenú relativo al padre */
+    top: 100%; /* Aparece debajo del elemento padre */
+    left: 0;
+    background-color: #a9825a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 150px; /* Asegura un ancho mínimo */
+    height: 80px;
+}
+
+ul > li:hover > ul {
+    display: block; /* Muestra el submenú al pasar el cursor */
+}
+
+ul > li > ul > li {
+    padding: 10px 20px; /* Añade espacio interno */
+    width: 100%; /* Asegura que cada elemento ocupe todo el ancho */
+    height: auto;
+}
+
+ul > li > ul > li > a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul > li > ul > li:hover {
+    background-color: #ba8445;
+}
+
+            
+                        /* Estilo de la imagen del logo */
+                        .logo img {
+                            width: 50px;
+    height: 50px; /* Ajusta el tamaño de la imagen */
+    margin: 0 10px; /* Espaciado horizontal */
+    padding: 0;
+    transform: translateY(-10%);
+}
+            
+            
+            /* Header/Blog Title*/
+            .header{
+                display: flex;
+                padding: 10px;
+                text-align: center;
+                background: #a9825a;
+                justify-content: center;
+                align-items: center;
+                margin-top: 50px;
+                height: 80px;
+            }
+
+            .header h1{
+                font-size: 50px;
+            }
+
+            body{
+                font-family: Arial;
+                padding: 10px;
+                background: #ffffff;
+            }
+
+            *{
+                box-sizing: border-box;
+            }
+
+
+            .ARTICULOS {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Espacio entre artículos */
+    align-items: flex-start; /* Alinea los artículos en la parte superior */
+    gap: 20px; /* Espacio entre artículos */
+    margin: 20px 0; /* Separación superior e inferior del contenedor */
+}
+
+.ARTICULOS > div {
+    flex: 1; /* Asegura que cada artículo tenga el mismo tamaño */
+    max-width: 30%; /* Limita el ancho de cada artículo */
+    border: 1px solid #ccc; /* Opcional: agrega un borde */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    background-color: #a9825a; /* Fondo claro */
+}
+
+
+            div.articulo{
+                max-width: 50px;
+                margin: 20px auto;
+                padding: 20px;
+                border: 2px solid #ccc;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            img{
+                width: 100%;
+                margin-bottom: 10px;
+                height: auto;
+            }
+            .contenido{
+                padding: 10px;
+                height: 280px;
+            }
+
+            .contenido h2{
+                color: #000000;
+                font-size: 24px;
+                margin-bottom: 10px;
+                margin-top: -10px;
+            }
+
+            .contenido p{
+                text-align: justify;
+                margin-top: -8px;
+            }
+
+            .ARTICULOS img {
+        width: 100%;
+        height: 300px; /* Ajusta según el diseño deseado */
+        object-fit: cover;
+    }
+
+
+
+            /*Footer*/
+            .footer{
+                padding: 20px;
+                text-align: center;
+                background: #a9825a;
+                margin-top: 20px;
+                height: 123px;
+            }
+
+            .footer h4{
+                margin-top: 2px;
+            }
+
+            
+            .redes img{
+    width: 50px;
+    height: 50px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .ARTICULOS > div {
+        flex: 1 1 45%; /* Dos columnas en pantallas medianas */
+        max-width: 45%;
+    }
+
+    ul {
+        flex-direction: column; /* Convierte el menú en vertical si aplica */
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ARTICULOS > div {
+        flex: 1 1 100%; /* Una columna en pantallas pequeñas */
+        max-width: 100%;
+    }
+
+    .ARTICULOS img {
+        height: 330px; /* Reduce la altura de las imágenes */
+    }
+
+    .contenido h2 {
+        font-size: 18px; /* Reduce el tamaño de los encabezados */
+    }
+
+    .contenido p {
+        font-size: 14px; /* Ajusta el tamaño del texto */
+    }
+
+    .leer-más {
+        font-size: 14px; /* Ajusta el tamaño del botón */
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+                .header{
+                    margin-top: 250px;
+                }
+                 ul {
+                 flex-direction: column; /* Convierte el menú en vertical */
+                  height: auto;
+                 }
+            }
+
+
+            @media only screen and (max-width: 700px){
+                .responsive{
+                    width: 49.99999%;
+                    margin: 6px 0;
+                }
+            }
+
+            @media only screen and (max-width: 500px){
+                .responsive{
+                    width: 100%;
+                }
+            }
+
+
+        </style>
+    </head>
+    <body>
+        
+        <ul>
+            <li class="logo"><a href="index.html"><img src="img/logo-removebg-preview.png" alt="Logo"></a></li>
+            <li><a href="cortes.html">Cortes de Cabello</a></li>
+            <li><a href="alaciado.html">Alisado de Cabello</a></li>
+            <li><a href="tintes.html">Tintes de Cabello</a></li>
+            <li><a href="peinados.html">Peinados</a></li>
+            <li>
+                <a href="#">Otros Servicios</a>
+                <ul>
+                    <li><a href="cejas.html">Cejas</a></li>
+                    <li><a href="pestañas.html">Pestañas</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        
+        <div class="header">
+            <h1>Alisados</h1> 
+         </div>
+
+
+         <div class="ARTICULOS">
+            <div class="articulo1">
+                <img src="img/brasileño.jpg" alt="Captura" width="100%">
+                <div class="contenido">
+                    <h2>Alisado Brasileño</h2>
+                    <p>Durante el procedimiento se hace uso de la keratina, el cual como ya sabemos, ayuda a combatir el frizz. Este método no rompe la cutícula
+                        como el alisado japonés sino que alisa la cutícula del cabello, por lo que no altera la estructura interna del cabello. Es ideal para aquellas
+                        personas que tienen el cabello dañado por decoloración o que usan frecuentemente herramientas de calor, es decir, las mujeres que se planchan
+                        el cabello de manera constante.
+                    </p>
+                    <h3>Duración:</h3>
+                    <p>De 3 a 4 meses.</p>
+                </div>
+            </div>
+            <div class="articulo2">
+                <img src="img/japones1.jpg" alt="Captura" width="100%">
+                <div class="contenido">
+                    <h2>Alisado Japonés</h2>
+                    <p>Este proceso consiste en llegar a la médula de la cutícula capilar y lo rompe para después aplicar una solución compuesta de agua 
+                        y moléculas de oro que reestructura el cabello. Se plancha el cabello y se fija esta nueva estructura con con neutralizador y posteriormente
+                        plancharlo nuevamente con placas de cerámica. 
+                    </p>
+                    <h3>Duración:</h3>
+                    <p>Permanente.</p>
+                </div>
+            </div>
+            <div class="articulo3">
+                <img src="img/cuidado.jpeg" alt="Captura" width="100%">
+                <div class="contenido">
+                    <h2>Alisado sin formol</h2>
+                    <p>No es recomendable para los cabellos rizados ya que no lo alisa en su totalidad, por otro lado, si es recomendable para cabellos ondulados
+                        o lacias que se encuentran encrespadas. Debido a que no contiene formaldehído, es apto para mujeres embarazadas o lactantes. Este método ayuda 
+                        a eliminar el frizz, un cabello suave y con brillo.
+                    </p>
+                    <h3>Duración:</h3>
+                    <p>De 3 a 6 meses.</p>
+                </div>
+            </div>
+        </div>
+
+        
+         <div class="footer">
+            <div class="redes">
+                <a href="https://www.facebook.com/"><img src="img/fb.webp"></a>
+                <a href="https://www.instagram.com"><img src="img/logoig-removebg-preview.png"></a>
+                <a href="https://www.x.com"><img src="img/twitter_x_new_logo_x_rounded_icon_256078-removebg-preview.png"></a>
+                <a href="https://www.tiktok.com"><img src="img/tiktok-removebg-preview.png"></a>
+            </div>
+            <h4>© zS21009934 2024</h4>
+        </div>
+
+    </body>
+</html>
